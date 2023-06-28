@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React,{ useEffect, useState }  from 'react';
+
+import Header from './Components/Layout/Header/Header';
+import Cards from './Components/Layout/MainCards/MainCards';
+
 import './App.css';
 
-function App() {
+
+
+
+
+const App =()=>{
+
+  //const navigate = useNavigate();
+  
+  const [SideBarOpen, setSideBarOpen] = useState(false); 
+  //setSideBarOpen(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="App">
+       <Header
+        pageWrapId={"page-wrap"} 
+        outerContainerId={"App"}
+        />
+      
+      <Cards />
+    
     </div>
-  );
-}
+      
+         
+  )
+};
+
 
 export default App;

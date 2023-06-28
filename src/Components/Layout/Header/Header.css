@@ -1,0 +1,107 @@
+#hamburgerMenu {
+    position: absolute;
+    left: 1.2%;
+   
+}
+header{
+    height: 8%;
+    background-color: darkblue !important;
+}
+#dashboard-logo {
+    /* position: absolute; */
+    margin-left: 2%;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.dashboard-icons {
+    display: flex;
+    justify-content:flex-end;
+    cursor: pointer; 
+    width: inherit;
+ 
+    width: 85%;
+}
+
+.icon-class {
+ height: 50px;
+ width: 50px;
+ margin-left: 23px;
+}
+
+&>p {
+    line-height: 1.0 !important;
+}
+
+.img-class{
+    height: 100%;
+    width: 100%;
+}
+.css-8u39c-MuiTypography-root {
+    width: 9rem;
+}
+.border{
+    border-radius: 50%;
+}
+.text-style span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+/* .overflowScroll {
+    a {
+        text-decoration: none;
+        display: flex;
+        padding: 0px 10px;
+        width: 80%;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+
+    div.active {
+        border-left: 2px solid #13fcba
+    }
+
+} */
+
+.dashboardListCls {
+    color: white;
+}
+
+/* .active {
+    span {
+        font-weight: bold;
+    }
+} */
+
+/* .sideBarTopIcon {
+    border: 1px solid #19f2c4 !important;
+    width: 40px;
+    height: 40px;
+}
+
+.leftDrawerPanel {
+    z-index: 0 !important;
+    top: 14% !important;
+    left: 10px !important;
+    bottom: 60px !important;
+}
+
+    &>div {
+        background-color: white;
+        width: 0px;
+    }
+
+    .MuiDrawer-paper {
+        background: #000023;
+        width: 200px !important;
+        position: absolute;
+    }
+
+
+.dashboardListIcon {
+    width: 18px;
+    height: 18px;
+    margin-top: 13px;
+    margin-left: 3px;
+} */

@@ -1,0 +1,43 @@
+/* .outer-div{
+  margin-top: 12vh;
+}
+
+.inner-item{
+  height: 30vh;
+}
+
+.Divclass{
+  margin-left: 4vh;
+  margin-right: 4vh;
+  background-color:  rgba(223, 222, 228, 0.591);
+}
+.main-div{
+  background-color: rgba(185, 183, 194, 0.591);
+} */
+
+.outer-div{
+  margin-top: 12vh;
+}
+
+.image-list{
+  width: 90%;
+  height: 80%;
+  margin-left: 5%;
+
+}
+
+image-item{
+  align-items: center;
+ margin: 10px;
+}
+.css-dasnyc-MuiImageListItemBar-title{
+  font-size: 1.5rem !important;
+  font-weight: bold;
+  line-height: 4rem;
+  align-items: center;
+}
+.css-l086p4-MuiImageListItem-root {
+  border: 3px solid black;
+    box-shadow: 8px 8px 12px grey;
+    padding: 8px;
+}
