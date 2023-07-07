@@ -16,17 +16,17 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import HelpIcon from '../../Icons/HelpIcon';
 import HomeIcon from '@mui/icons-material/Home';
 import Person2Icon from '@mui/icons-material/Person2';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
-import AppLogo from "../../Icons/AppLogo";
+
+
 
 
 import './Header.css'
 import { BorderAllRounded, Height, MarginTwoTone } from '@mui/icons-material';
 
-const drawerWidth = 240;
+const drawerWidth = 230;
 
 
 // const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -55,13 +55,18 @@ const AppBar = styled(MuiAppBar, {
   transition: theme.transitions.create(['margin', 'width'], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
+    height: '80vh !important',
+    marginTop: '10vh !important'
+   
   }),
   ...(open && {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: `${drawerWidth}px`,
+    width:  '100%', //`calc(100% - ${drawerWidth}px)`,
+    marginLeft: '0', //`${drawerWidth}px`,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
+      height: '80vh !important',
+      marginTop: '10vh !important'
     }),
   }),
 }));
@@ -73,11 +78,14 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
+
 }));
+
+
 
 const Header = ()=>{
   const theme = useTheme();
- // const navigate = useNavigate();
+ const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -89,8 +97,13 @@ const Header = ()=>{
   };
 
   const goToHome = () => {
-   console.log("xyz")
-    //navigate(`/`)
+     navigate(`/`)
+  }
+  const aboutUs = () => {
+    navigate(`/Aboutus`);
+  }
+  const contactUs =() =>{
+    navigate(`/Contactus`);
   }
   return (
     <Box sx={{ display: 'flex' }}>
@@ -99,7 +112,7 @@ const Header = ()=>{
         <Toolbar>
           <IconButton
           id="hamburgerMenu"
-            color="inherit"
+            color="black"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
@@ -113,7 +126,7 @@ const Header = ()=>{
             <img  alt="Fibre" src ="/img/fibre.jpeg" className='img-class border'/>
             </div>
           {/* </Typography> */}
-          <Typography variant="h6" noWrap component="div" >
+          <Typography variant="h6" noWrap component="div" style={{"color" :"black" }}>
            Fibre Play
           </Typography>
           <div className="dashboard-icons display-flex">
@@ -158,7 +171,8 @@ const Header = ()=>{
                 
                   {index === 0 ? <HomeIcon /> : index === 1 ? <Person2Icon /> : <ContactPhoneIcon /> }
                 </ListItemIcon>
-                <ListItemText primary={text} className='text-style' /> 
+                <ListItemText primary={text} onClick ={index === 0 ? goToHome : index === 1 ? aboutUs : contactUs}
+                 className='text-style' /> 
               </ListItemButton>
             </ListItem>
           ))}

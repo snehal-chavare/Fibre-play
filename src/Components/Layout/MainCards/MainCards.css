@@ -16,12 +16,12 @@
 } */
 
 .outer-div{
-  margin-top: 12vh;
+  margin-top: 8%;
 }
 
 .image-list{
   width: 90%;
-  height: 80%;
+  /* % */
   margin-left: 5%;
 
 }

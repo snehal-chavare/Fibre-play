@@ -10,7 +10,7 @@ body {
 
 #page-wrap {
   text-align: center;
-  overflow: auto;
+  /* overflow: auto; */
   top: 45%;
   position: relative;
 }

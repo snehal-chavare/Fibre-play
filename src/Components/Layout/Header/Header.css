@@ -5,7 +5,9 @@
 }
 header{
     height: 8%;
-    background-color: darkblue !important;
+    /* border-bottom: 1px solid black; */
+    background-color: #eeeeee !important;
+   
 }
 #dashboard-logo {
     /* position: absolute; */
@@ -46,6 +48,18 @@ header{
 .text-style span {
     font-size: 1.2rem;
     font-weight: bold;
+    color: white;
+}
+.MuiListItemIcon-root , .css-78trlr-MuiButtonBase-root-MuiIconButton-root {
+    color: white !important;
+}
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+    background-color: rgba(0, 0, 21, 0.892) !important;
+    color: white !important;
+}
+.MuiDrawer-paperAnchorLeft {
+    height: 84vh !important;
+    margin-top: 8vh;
 }
 /* .overflowScroll {
     a {

@@ -1,0 +1,44 @@
+
+.com-logo{
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    border: 1px solid black;
+    box-shadow: 3px 6px 3px gray;
+}
+.company-head{
+    text-align: center;
+   
+}
+.heading{
+    font-size: 3rem !important;
+    font-weight: bold;
+}
+.com-profile {
+    color: skyblue;
+}
+.com-about table  {
+    border: 1px solid black;
+    padding: 14px !important;
+  
+   
+}
+td{
+    padding: 13px;
+    width: 80%;
+    font-size: 1.3rem;
+    font-weight: bold;
+
+}
+ tr:nth-child(even){
+    background-color: rgba(193, 193, 193, 0.808);
+ }
+ table {
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
