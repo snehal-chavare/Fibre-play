@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useNavigate } from "react-router-dom"
+import { useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -19,12 +20,19 @@ import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import Person2Icon from '@mui/icons-material/Person2';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import CategoryIcon from '@mui/icons-material/Category';
+import DetailsIcon from '@mui/icons-material/Details';
+import ArrowRight from '@mui/icons-material/ArrowRight';
+import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
+
 
 
 
 
 import './Header.css'
-import { BorderAllRounded, Height, MarginTwoTone } from '@mui/icons-material';
+import { BorderAllRounded, Height, MarginTwoTone, Opacity } from '@mui/icons-material';
+
+import { Divider } from '@mui/material';
 
 const drawerWidth = 230;
 
@@ -47,8 +55,46 @@ const drawerWidth = 230;
 //     }),
 //   }),
 // );
+const data = [
+  { 
+    icon:  <HomeIcon />,
+     label: 'Home', 
+    
+       },
+  { 
+    icon: <Person2Icon />,
+     label: 'About us',
+    
+     },
+  
+  { 
+    icon: <DetailsIcon />, 
+    label: 'Enquiry',
+    
+  },
+];
 
-const AppBar = styled(MuiAppBar, {
+const productList = { 
+  icon: <CategoryIcon />, 
+ label: 'Products' ,
+ products:[
+  {
+    label:'Animals'
+  },
+  {
+    label:'Benches'
+  },
+  {
+    label:'Dustbins'
+  },
+  {
+     label:'Toys'
+  }
+ ]
+}
+
+
+const AppBar = styled(MuiAppBar, { 
   
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
@@ -84,6 +130,9 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 
 const Header = ()=>{
+
+  const [show, setShow] = useState(false);
+
   const theme = useTheme();
  const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
@@ -95,15 +144,25 @@ const Header = ()=>{
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
+const menuFunction =(id) =>{
+    if(id === 0)
+    goToHome()
+    else if(id === 1)
+    aboutUs()
+    else if (id === 3)
+      enquiry()
+    else{
+      goToHome()
+    }
+}
   const goToHome = () => {
      navigate(`/`)
   }
   const aboutUs = () => {
     navigate(`/Aboutus`);
   }
-  const contactUs =() =>{
-    navigate(`/Contactus`);
+  const enquiry =() =>{
+    navigate(`/enquiry`);
   }
   return (
     <Box sx={{ display: 'flex' }}>
@@ -164,37 +223,76 @@ const Header = ()=>{
         </DrawerHeader>
         {/* <Divider /> */}
         <List>
-          {['Home', 'About us', 'contact us'].map((text, index) => (
-            <ListItem key={text} disablePadding>
+          {data.map((item, index) => (
+            <ListItem key={item.label} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                
-                  {index === 0 ? <HomeIcon /> : index === 1 ? <Person2Icon /> : <ContactPhoneIcon /> }
+                {item.icon}
+                 
                 </ListItemIcon>
-                <ListItemText primary={text} onClick ={index === 0 ? goToHome : index === 1 ? aboutUs : contactUs}
+                <ListItemText primary={item.label} onClick = {()=>menuFunction(index)}
                  className='text-style' /> 
               </ListItemButton>
             </ListItem>
           ))}
-        </List>
-        {/* <Divider /> */}
-        {/* <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+          <Divider sx={{color: 'white'}}/>
+          {/* <hr /> */}
+          <Box
+              sx={{
+                bgcolor: show ? 'rgba(71, 98, 130, 0.2)' : null,
+                pb: show ? 2 : 0,
+              }}
+            >
+            <ListItemButton
+            onClick={() => setShow(!show)}
+            sx={{
+              px: 2,
+              pt: 2.5,
+              pb: show ? 0 : 2.5,
+              '&:hover, &:focus': { '& svg': { opacity: show ? 1 : 1 } },
+            }}>
+               <ListItemIcon>
+               
+                {productList.icon}
+                 
                 </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List> */}
+              <ListItemText
+                  primary= {productList.label}
+                  className='text-style' 
+                  
+              />
+               <KeyboardArrowDown
+                  sx={{
+                    mr: 2,
+                    opacity: 0,
+                    transform: show ? 'rotate(-180deg)' : 'rotate(0)',
+                    transition: '0.2s',
+                  }}
+                />
+            </ListItemButton>
+           
+
+            {show &&
+                productList.products.map((item) => (
+                  <ListItemButton
+                    key={item.label}
+                    sx={{ py: 2, px: 10, minHeight: 32, color: 'rgba(255,255,255,.8)' }}
+                  >
+                    {/* <ListItemIcon sx={{ color: 'inherit' }}>
+                      {item.icon}
+                    </ListItemIcon> */}
+                    <ListItemText
+                      primary={item.label}
+                      primaryTypographyProps={{ fontSize: 18, fontWeight: 'bold' }}
+                    />
+                  </ListItemButton>
+                ))} 
+
+           </Box>
+        </List>
+        
       </Drawer>
-      {/* <Main open={open}>
-        <DrawerHeader />
-      
-      </Main> */}
+     
     </Box>
   );
 }

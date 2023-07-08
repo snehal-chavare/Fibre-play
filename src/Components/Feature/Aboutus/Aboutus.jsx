@@ -14,7 +14,7 @@ const Aboutus = () =>{
               <form method="">
                  <div className='row'>
                     <div className='col-md-4 col-xs-2'>
-                        <img src = '/img/fibre.jpg' alt="Fibre-Play" />
+                        <img src = '/img/fibre.jpeg' alt="Fibre-Play" />
                     </div>
                     <div className='col-md-4 col-xs-2'>
                        <div className='company-head'>

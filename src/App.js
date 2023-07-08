@@ -7,7 +7,7 @@ import Cards from './Components/Layout/MainCards/MainCards';
 import Footer from './Components/Layout/Footer/Footer';
 import Contactus from './Components/Feature/Contactus/Contactus';
 import Aboutus from './Components/Feature/Aboutus/Aboutus';
-
+import Enquiry from './Components/Feature/Enquiry/Enquiry'
 import './App.css';
 
 
@@ -28,7 +28,7 @@ const App =()=>{
        <Routes>
           <Route path='/' element = { <Cards />}/>
           <Route path='/Aboutus' element = {<Aboutus />}/>
-          <Route path='/Contactus' element = {<Contactus />} />
+          <Route path='/Enquiry' element = {<Contactus />} />
         </Routes>
         <Footer style={{height:"8%"}} />
     </div>
