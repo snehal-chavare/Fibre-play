@@ -1,0 +1,19 @@
+#modal-modal-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+#modal-img-div {
+  height: 50%;
+  width: 50%;
+  margin-top: 4vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-close-button{
+    display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}

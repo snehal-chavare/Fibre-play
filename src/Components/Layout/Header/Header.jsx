@@ -106,8 +106,8 @@ const AppBar = styled(MuiAppBar, {
    
   }),
   ...(open && {
-    width:  '100%', //`calc(100% - ${drawerWidth}px)`,
-    marginLeft: '0', //`${drawerWidth}px`,
+    width:  '100%',
+    marginLeft: '0',
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
@@ -149,7 +149,7 @@ const menuFunction =(id) =>{
     goToHome()
     else if(id === 1)
     aboutUs()
-    else if (id === 3)
+    else if (id === 2)
       enquiry()
     else{
       goToHome()
@@ -162,7 +162,7 @@ const menuFunction =(id) =>{
     navigate(`/Aboutus`);
   }
   const enquiry =() =>{
-    navigate(`/enquiry`);
+    navigate(`/Enquiry`);
   }
   return (
     <Box sx={{ display: 'flex' }}>

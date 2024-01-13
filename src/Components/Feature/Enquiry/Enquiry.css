@@ -1,0 +1,133 @@
+.wrapped{
+    height: max-content;
+    width: 30%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+  }
+
+  input{
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+
+  }
+  /* .container{
+    margin-top: 9.5%;
+    border: 1px solid black;
+    width: 40%;
+  } */
+
+  
+  .title{
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+  }
+
+  form{
+    margin-top: 2vh;
+  }
+
+  .enquiryForm{
+    height: max-content;
+    width: 100%;
+    display: block;
+  }
+
+  label{
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    margin: 8px;
+  }
+
+ .primary{
+    width: 6em;
+    height: 2.8em;
+    font-weight: bold;
+    font-size: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: darkblue;
+    color: white;
+  }
+  .button-class{
+    display: flex;
+    justify-content: end;
+    margin: 6px;
+  }
+  .quantity-div{
+    display: flex !important;
+    margin-top: 6px;
+  }
+.quantity-input{
+    width: 20%;
+}
+
+.errorMsg{
+   color: red;
+   font-size: 14px;
+   padding: 2px 0;
+   margin-top: 2px;
+   font-weight: 300;
+}
+.success-msg {
+  color: #7ca936;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 800px) {
+ 
+
+  .form-control {
+    flex-direction: column;
+  }
+
+  .errorMsg {
+    max-width: 100%;
+  }
+
+  .form-control {
+    flex-direction: column;
+  }
+  .wrapped{
+   
+    width: 60%;
+   
+}
+}
+
+
