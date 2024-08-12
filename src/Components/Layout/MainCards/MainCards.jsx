@@ -5,7 +5,6 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 
-
 import tileData from "./tileData";
 import "./MainCards.css";
 import { ButtonGroup } from "@mui/material";
@@ -13,9 +12,11 @@ import { Button } from "react-bootstrap";
 
 const Cards = () => {
   const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState({});
 
   // handleOpen
-  const handleOpenModal = () => {
+  const handleOpenModal = (selectedImageData) => {
+    setSelectedImage(selectedImageData);
     setShowModal(true);
   };
 
@@ -44,6 +45,7 @@ const Cards = () => {
             {tileData.map((item) => (
               <ImageListItem key={item.title}>
                 <img
+                  id={item.id}
                   src={`${item.img}?w=248&fit=crop&auto=format`}
                   srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                   alt={item.title}
@@ -54,7 +56,7 @@ const Cards = () => {
                 <ButtonGroup className="img-buttongrp">
                   <Button
                     className="img-button"
-                    onClick= {handleOpenModal}
+                    onClick={() => handleOpenModal(item)}
                   >
                     Get Details
                   </Button>
@@ -65,17 +67,22 @@ const Cards = () => {
             ))}
           </ImageList>
         </div>
-        {showModal ? <Modal
-        onClose={handleCloseModal}
-         aria-labelledby="modal-modal-title"
-         aria-describedby="modal-modal-description"
-         title= "XYZ"//{item.title}
-         img="XYZ.png" //{item.img}
-         height="300"
-         width="300"
-         price="3000"
-         bestPrice="2800"
-        />: ""}
+        {showModal ? (
+          <Modal
+            onClose={handleCloseModal}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            title="XYZ" //{item.title}
+            img="XYZ.png" //{item.img}
+            height="300"
+            width="300"
+            price="3000"
+            bestPrice="2800"
+            imageData={selectedImage}
+          />
+        ) : (
+          ""
+        )}
       </div>
     </> //</Box>
   );
